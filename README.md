@@ -14,6 +14,7 @@
 ```shell
 docker-compose -f docker-compose.yml up --build 
 ```
+
 ## 3. запуск тестов
 Запуск и сборка приложения и базы данных происходит с помощью команды через docker-compose:
 ```shell
