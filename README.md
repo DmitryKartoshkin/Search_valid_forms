@@ -12,6 +12,10 @@
 ## 2. Запуск приложения
 Запуск и сборка приложения и базы данных происходит с помощью команды через docker-compose:
 ```shell
-docker-compose up --build -d
+docker-compose -f docker-compose.yml up --build 
 ```
-
+## 3. запуск тестов
+Запуск и сборка приложения и базы данных происходит с помощью команды через docker-compose:
+```shell
+docker-compose -f docker-compose-test.yml up --build --exit-code-from app
+```
