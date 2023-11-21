@@ -1,8 +1,6 @@
 from typing import Annotated
 import asyncio
-
 from fastapi import FastAPI, Query
-from motor.motor_asyncio import AsyncIOMotorClient
 from starlette.requests import Request
 import uvicorn
 
