@@ -1,4 +1,4 @@
-async def find_matching_template(document: dict, typed_data: dict):
+async def find_matching_template(document: dict, typed_data: dict) -> str:
     template_fields = list(document.keys())
     name_form = document["name"]
     template_fields.remove("name")
