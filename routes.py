@@ -9,31 +9,9 @@ import uvicorn
 from services import find_matching_template
 from validator import get_type
 
-
-Form = [
-        {'name': 'form_name_1', 'name_1': 'text', 'phone': 'phone', 'date': 'date', 'mail': 'email'},
-        {'name': 'form_name_2', 'phone': 'phone', 'date': 'date', 'mail': 'email'},
-        {'name': 'form_name_3', 'date': 'date'},
-        {'name': 'form_name_4', 'name_1': 'text', 'phone': 'phone'}
-]
-
 app = FastAPI()
 
 from mongo_bd import create_db
-
-
-@app.post("/")
-async def create_record(request: Request) -> dict:
-    mongo_client: AsyncIOMotorClient = request.app.state.mongo_client["test_database"]
-    for i in Form:
-        await mongo_client.records.insert_one(i)
-    return {"Success": True}
-
-
-@app.get("/")
-async def get_records(request: Request) -> list:
-    cursor = await create_db(request)
-    return cursor
 
 
 @app.post("/get_form")
