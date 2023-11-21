@@ -16,7 +16,8 @@ docker-compose -f docker-compose.yml up --build
 ```
 
 ## 3. запуск тестов
-Запуск и сборка приложения и базы данных происходит с помощью команды через docker-compose:
+Запуск тестов происходит через терминале git bash командой:
 ```shell
-docker-compose -f docker-compose-test.yml up --build --exit-code-from app
+./run_tests.sh
 ```
+После запуска скрипта происходит сборка контейнеров с БД и приложением, прогон тестов, и удаление контейнеров 
